@@ -27,3 +27,5 @@ checklist
 [ ] WebSocket: handle offer, answer, ice-candidate, peer-left messages
 [ ] DELETE /api/rooms/:id → sets is_active=False, broadcasts room-closed to peers
 [ ] Graceful disconnect: if WS drops, broadcast peer-left to the other peer
+
+
