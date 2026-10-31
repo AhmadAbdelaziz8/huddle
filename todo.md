@@ -24,8 +24,8 @@ create the endpoints using
 checklist
 [x] Room model: id, created_at, is_active
 [x] POST /api/rooms/ → returns { "join_url": "https://.../rooms/abc123" }
-[ ] WebSocket: handle offer, answer, ice-candidate, peer-left messages
 [ ] DELETE /api/rooms/:id → sets is_active=False, broadcasts room-closed to peers
+[ ] WebSocket: handle offer, answer, ice-candidate, peer-left messages
 [ ] Graceful disconnect: if WS drops, broadcast peer-left to the other peer
 
 

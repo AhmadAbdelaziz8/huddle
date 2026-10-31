@@ -9,7 +9,7 @@ from .models import Room
 
 from django.shortcuts import get_object_or_404
 
-class RoomCreateView(APIView):
+class RoomListCreateView(APIView):
     # list all rooms 
     def get(self,request):
         rooms = Room.objects.filter(is_active=True).order_by("-created_at")
@@ -36,3 +36,11 @@ class RoomDetailView(APIView):
 
         return Response(serializer.data)
 
+    def delete(self,request,pk):
+        room = get_object_or_404(Room, pk=pk, is_active=True)
+        # room = delete_ob
+        # close the room
+        room.is_active=False
+        room.save()
+
+        return Response(status=status.HTTP_204_NO_CONTENT)
