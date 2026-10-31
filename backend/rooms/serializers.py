@@ -18,4 +18,4 @@ class RoomSerializer(serializers.ModelSerializer):
         # 4. FIXED: The correct Django method is build_absolute_uri(), not build_absolute_url().
         # Also fixed the localhost port formatting.
         base_url = request.build_absolute_uri('/') if request else 'http://localhost:8000/'
-        return f"{base_url}{obj.id}"
+        return f"{base_url}rooms/{obj.id}"
